@@ -91,11 +91,16 @@ jQuery(function($) {
       });
     }
   });
-});
 
-function reformatDates(cssSelector) {
-  $(cssSelector).each(function() {
-    const date = $(this).text().replace(/\//g, ".")
-    $(this).text(date)
-  }):
-}
+  $(document).on("scroll", function() {
+    var scrollTop = $("body").scrollTop();
+    $("#navigation,#content-wrapper").toggleClass("navi-fixed-position", scrollTop >= 170);
+  });
+
+  function reformatDates(cssSelector) {
+    $(cssSelector).each(function() {
+      var date = $(this).text().replace(/\//g, ".")
+      $(this).text(date)
+    });
+  }
+});

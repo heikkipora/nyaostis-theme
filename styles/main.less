@@ -167,6 +167,22 @@ body.full-width-off #footer {
   font-family: 'Raleway', sans-serif;
   font-size: 13px;
 }
+
+@media (min-width:1025px) {
+  #navigation.navi-fixed-position {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -480px;
+    z-index: 10;
+    background-color: white;
+  }
+
+  #content-wrapper.navi-fixed-position {
+    margin-top: 36px;
+  }
+}
+
 #navigation a{
   display:inline-block;
   padding:10px 14px;
