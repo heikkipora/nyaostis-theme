@@ -70,6 +70,8 @@ jQuery(function($) {
   }
 
   $(document).ready(function() {
+    reformatDates(".date-text");
+
     $("body").addClass("postload");
     Theme.swipeInit();
     Theme.toggleClick(".wsite-com-sidebar", ".wsite-com-sidebar", "sidebar-expanded");
@@ -88,7 +90,12 @@ jQuery(function($) {
         }
       });
     }
-
-
   });
 });
+
+function reformatDates(cssSelector) {
+  $(cssSelector).each(function() {
+    const date = $(this).text().replace(/\//g, ".")
+    $(this).text(date)
+  }):
+}
