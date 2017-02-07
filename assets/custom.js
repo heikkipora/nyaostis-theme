@@ -71,6 +71,7 @@ jQuery(function($) {
 
   $(document).ready(function() {
     reformatDates(".date-text");
+    rewriteUmlautsInTwitterLinks();
 
     $("body").addClass("postload");
     Theme.swipeInit();
@@ -101,6 +102,13 @@ jQuery(function($) {
     $(cssSelector).each(function() {
       var date = $(this).text().replace(/\//g, ".")
       $(this).text(date)
+    });
+  }
+
+  function rewriteUmlautsInTwitterLinks() {
+    $('a.twitter-share-button').each(function() {
+      var text = $(this).attr('data-text').replace(/&Ouml;/, "Ö")
+      $(this).attr('data-text', text)
     });
   }
 });
